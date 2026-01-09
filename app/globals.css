@@ -2,15 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background: radial-gradient(circle at top, #020617, #000);
-  color: white;
+/* ===== Root Theme ===== */
+:root {
+  --gold: #facc15;
+  --aqua: #22d3ee;
+  --blue: #0f172a;
 }
 
+body {
+  background:
+    radial-gradient(1200px circle at top, #0b1220, #020617),
+    linear-gradient(180deg, #020617, #000);
+  color: #e5e7eb;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* ===== Glassmorphism Card ===== */
 .glass {
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(18px);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* ===== Gradient Text ===== */
+.gradient-text {
+  background: linear-gradient(90deg, var(--gold), var(--aqua));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Buttons ===== */
+.glass-btn {
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    rgba(250, 204, 21, 0.25),
+    rgba(34, 211, 238, 0.25)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.5);
 }
